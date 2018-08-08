@@ -38,7 +38,7 @@ print("".join(s))
 
 The configuration file revealed that the main directory of the webapp was `/app` and after some trial and error I discovered that the Flask server was located at `/app/app.py`. After getting the contents of that file using the same method as above, I found the flag in the source code.
 
-## Analisis of the source code
+## Analysis of the source code
 I mentioned at the beginning that a possible solution would be to click only the fields that do not contain mines using the locations of the mines obtained from `/get_mines`. It turns out that such a solution is impossible, because of this:
 ```python
 @app.route('/get_mines', methods=['POST'])
