@@ -1,5 +1,6 @@
 # Military grade authentication
 Problem: https://hack.cert.pl/challenge/military-grade-authentication
+
 This problem is quite interesting and in my opinion should be a mandatory exercise for all aspiring web developers, as it shows that even a seemingly harmless `.git` directory on a production server can be an extremely dangerous issue.
 
 Initial recon of `https://military-grade-authentication.ecsc18.hack.cert.pl/` shows the `.git` directory in `robots.txt`. Not many people are aware of this (more on that later), but it is actually possible to "download" a GIT repository from a production server and recover all of the source code that was under version control. The website in this challenge does not list directories, so we will recover the contents of `.git` by guessing where the contents of that directory is. If directory listing was enabled, recovering the directory would be as simple as running `wget` in recursive mode.
